@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { connection } from "./config/connectionDb.js";
 
 const app = express();
-app.get("/", (req, res) => {
+app.get("/respo", (req, res) => {
   res.send("Hello");
 });
 
