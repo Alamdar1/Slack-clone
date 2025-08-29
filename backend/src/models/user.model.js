@@ -1,6 +1,6 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-export const User = new Schema(
+const userSchema = new Schema(
   {
     email: {
       type: String,
@@ -23,3 +23,6 @@ export const User = new Schema(
   },
   { timestamps: true }
 );
+
+// Prevent model overwrite errors in Next.js hot reload
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
